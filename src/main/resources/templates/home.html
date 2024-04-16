@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+<h1>Tervetuloa Elokuvasovellus -sivuille!</h1>
+<nav>
+    <ul>
+        <li><a th:href="@{/movies}">List Movies</a></li>
+        <li><a th:href="@{/movies/add}">Add New Movie</a></li>
+        <!-- Lisää muita linkkejä tarpeen mukaan -->
+    </ul>
+</nav>
+</body>
+</html>
