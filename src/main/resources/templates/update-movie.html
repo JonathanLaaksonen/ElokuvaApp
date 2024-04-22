@@ -2,17 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Update Movie</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
 <h1>Update Movie</h1>
 <form action="#" th:action="@{/movies/update/{id}(id=${movie.id})}" th:object="${movie}" method="post">
-    <p>Title: <input type="text" th:field="*{title}" /></p>
-    <p>Release Year: <input type="number" th:field="*{releaseYear}" /></p>
-    <p>Genre: <input type="text" th:field="*{genre}" /></p>
-    <p>Description: <textarea th:field="*{description}"></textarea></p>
+    <p><b>Title:</b> <input type="text" th:field="*{title}" /></p>
+    <p><b>Release Year:</b> <input type="number" th:field="*{releaseYear}" /></p>
+    <p><b>Genre:</b> <input type="text" th:field="*{genre}" /></p>
+    <p><b>Description:</b> <textarea th:field="*{description}"></textarea></p>
     <p><button type="submit">Update</button></p>
 </form>
-<a href="/movies">Return to list</a>
+<button type="submit"><a href="/movies">Palaa takaisin</a></button>
 </body>
 </html>

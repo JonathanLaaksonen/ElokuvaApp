@@ -2,17 +2,26 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Movies List</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-<h1>Elokuvat</h1>
+
+    <div sec:authorize="isAuthenticated()" class="auth-info">
+        Kirjautunut nimellä: <b><span sec:authentication="name">Username</span></b>
+        <form id="logoutForm" th:action="@{/logout}" method="post" class="logout-button">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            <input type="submit" value="Logout" class="btn btn-warning1"/>
+        </form>
+    </div>
+
+<h1 class="centered-title" style="font-size:45px;">Elokuvat lista</h1>
 <table>
     <thead>
         <tr>
             <th>Title</th>
             <th>Release Year</th>
             <th>Genre</th>
-            <th>Description</th>
+            <th>Description/Review</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -29,8 +38,10 @@
         </tr>
     </tbody>
 </table>
-<li><a href="/movies/add">Lisää uusi elokuva tästä.</a></li>
-<p></p>
-<li><a href="/home" th:href="@{/home}">Takaisin pääsivulle.</a></li>
+<p> </p>
+<nav>
+    <a href="/movies/add" class="btn btn-primary">Lisää uusi elokuva tästä.</a>
+    <a href="/home" class="btn btn-secondary">Takaisin pääsivulle.</a>
+</nav>
 </body>
 </html>

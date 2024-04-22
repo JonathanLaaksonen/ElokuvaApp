@@ -2,17 +2,26 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/home-styles.css">
 </head>
 <body>
-<h1>Tervetuloa Elokuvasovellus -sivuille!</h1>
+
+    <div sec:authorize="isAuthenticated()" class="auth-info">
+        Kirjautunut nimellä: <b><span sec:authentication="name">Username</span></b>
+        <form id="logoutForm" th:action="@{/logout}" method="post" class="logout-button">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            <input type="submit" value="Logout" class="btn btn-warning1"/>
+        </form>
+    </div>
+
+    <div class="centered-content">
+        <h1 class="centered-title" style="font-size:35px;">Tervetuloa Elokuvasovellus -sivuille</h1>
+        <p><b>Elokuvasovellus -sivulla pystyt lisäämään näkemiäsi elokuvia sekä antamaan niistä palautetta tai arvostelua.</b></p>
+        <p><b>Elokuvan lisättyä pystyt myös myöhemmin muokkaamaan arvosteluasi tai jopa elokuvan tietoja. Mahdollista on myös poistaa kokonaan kaikki syötetyt tiedot.</b></p>
 <nav>
-    <ul>
-        <li><a th:href="@{/movies}">List Movies</a></li>
-        <p> </p>
-        <li><a th:href="@{/movies/add}">Add New Movie</a></li>
-        <li><a th:href="@{/logout}" th:if="${#authorization.expression('isAuthenticated()')}">Kirjaudu ulos</a></li>
-    </ul>
+        <a href="/movies" class="btn btn-primary">Elokuva sivulle tästä.</a>
 </nav>
+</div>
 </body>
 </html>

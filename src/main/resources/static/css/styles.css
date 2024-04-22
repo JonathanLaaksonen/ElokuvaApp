@@ -1,0 +1,108 @@
+/* Tämä kohdistaa kaikkiin th-elementteihin taulukon sisällä */
+table th {
+    background-color: #004D40; /* tummanvihreä tausta */
+    color: white; /* valkoinen teksti */
+    padding: 10px; /* tilaa ympärillä */
+    border: 1px solid #ddd; /* vaaleanharmaa reuna */
+    text-align: left; /* tekstin tasaus vasemmalle */
+}
+
+/* Tämä kohdistaa taulukon rivit */
+table tr {
+    background-color: #f2f2f2; /* vaaleanharmaa tausta riveille */
+}
+
+/* Tämä kohdistaa kaikkiin td-elementteihin taulukon sisällä */
+table td {
+    padding: 10px; /* tilaa ympärillä */
+    border: 1px solid #ddd; /* vaaleanharmaa reuna */
+}
+
+/* Tämä kohdistaa linkit taulukossa, antaa niille tyylit */
+table a {
+    color: #ec1111; /* linkkien väri */
+    text-decoration: none; /* ei alleviivausta */
+}
+
+table a:hover {
+    text-decoration: underline; /* alleviivaus kun hiiri linkin päällä */
+}
+
+html {
+    height: 100%;
+    background-color: #b1e5f9; /* esimerkkinä vaaleanharmaa taustaväri */
+}
+
+body {
+    min-height: 100%;
+    margin: 0; /* poistaa oletusmarginaalit */
+    background-color: inherit; /* perii taustavärin html-elementiltä */
+}
+
+table {
+    width: 100%; /* Asettaa taulukon leveydeksi 100% vanhempansa leveydestä */
+    max-width: 100%; /* Estää taulukon olemasta suurempi kuin 100% */
+    margin: 0; /* Poistaa mahdolliset marginaalit */
+}
+
+/* Kirjautumistiedot ja logout-painike */
+.auth-info {
+    border: 2px solid #333; /* vaihda väri haluamaksesi */
+    padding: 7px;
+    border-radius: 5px; /* pyöristetyt kulmat */
+    display: inline-block; /* tee div lohko-elementiksi */
+    margin-bottom: 5px; /* tila alapuolella */
+}
+
+.logout-button {
+    margin-top: 5px; /* tila logout-painikkeen ja tekstin välillä */
+    display: block; /* tee lomake erilliselle riville */
+}
+
+.btn {
+    padding: 10px 15px;
+    color: rgb(13, 12, 12);
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #28a745; /* vihreä tausta */
+    color: white; /* valkoinen teksti */
+    padding: 10px 20px; /* padding ympärillä */
+    text-decoration: none; /* ei alleviivausta */
+    border-radius: 5px; /* pyöristetyt reunat */
+    border: none; /* ei reunaa */
+    display: inline-block; /* näytä painikkeena */
+    margin-bottom: 10px; /* väliä alapuolelle */
+    transition: background-color 0.3s; /* siirtymä hover-tilassa */
+}
+
+/* Kun hiiri on painikkeen päällä */
+.btn-primary:hover {
+    background-color: #218838; /* tummempi vihreä */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* harmaa tausta */
+    color: white; /* valkoinen teksti */
+    padding: 10px 20px; /* padding ympärillä */
+    text-decoration: none; /* ei alleviivausta */
+    border-radius: 5px; /* pyöristetyt reunat */
+    border: none; /* ei reunaa */
+    display: inline-block; /* näytä painikkeena */
+    margin-bottom: 10px; /* väliä alapuolelle */
+    transition: background-color 0.3s; /* siirtymä hover-tilassa */
+}
+
+/* Kun hiiri on painikkeen päällä */
+.btn-secondary:hover {
+    background-color: #545b62; /* tummempi harmaa */
+}
+
+.centered-title {
+    text-align: center; /* Keskittää tekstin vaakasuunnassa */
+}

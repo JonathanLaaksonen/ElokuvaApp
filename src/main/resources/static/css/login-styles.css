@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Vie vähintään koko näytön korkeuden */
+    flex-direction: column; /* Asettaa elementit pystysuoraan linjaan */
+  }
+  
+  .login-box {
+    border: 1px solid #ddd; /* Vaaleanharmaa reunus */
+    padding: 20px;
+    border-radius: 5px; /* Pyöristetyt kulmat */
+    width: 300px; /* Voit säätää tämän leveyden tarpeesi mukaan */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Lisää kevyt varjostus */
+    background-color: #fff; /* Valkoinen taustaväri */
+  }
+  
+  /* Tarvittaessa lisää tyylejä painikkeille ja input-kentille */
+  input[type=text],
+  input[type=password] {
+    width: 90%; /* Säätää input-kenttien leveyden */
+    padding: 10px;
+    margin-bottom: 10px; /* Lisää tilaa elementtien välille */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button {
+    width: 100%; /* Säätää painikkeen leveyden */
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer; /* Muuttaa kursorin käsi-ikoniin */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Painikkeen väri, kun hiiri on päällä */
+  }
+  
+  /* Jos käytät listaa rekisteröintilinkille, voit säätää myös sen tyylejä */
+  ul {
+    list-style: none; /* Poistaa listan merkit */
+    padding: 0;
+  }
+  
+  ul li a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  ul li a:hover {
+    text-decoration: underline;
+  }
