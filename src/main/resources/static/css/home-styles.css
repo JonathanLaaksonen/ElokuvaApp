@@ -1,4 +1,4 @@
-/* Keskittää sisällön vaakasuunnassa ja pystysuunnassa */
+
 .centered-content {
   display: flex;
   flex-direction: column;
@@ -7,5 +7,5 @@
 }
 
   .centered-title {
-    margin-top: -20px; /* Säädä tätä arvoa siirtääksesi otsikkoa ylöspäin */
+    margin-top: -20px; 
 }

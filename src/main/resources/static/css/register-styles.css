@@ -13,7 +13,7 @@
     width: 300px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
     background-color: #fff;
-    margin-bottom: 15px; /* Välimatka logout-painikkeesta */
+    margin-bottom: 15px; 
   }
   
   input[type=text],
@@ -42,7 +42,7 @@
   ul {
     list-style: none;
     padding: 0;
-    text-align: center; /* Keskittää rekisteröintilinkin */
+    text-align: center; 
   }
   
   ul li a {

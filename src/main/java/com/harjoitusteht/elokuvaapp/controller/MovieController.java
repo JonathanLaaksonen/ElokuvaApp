@@ -13,14 +13,13 @@ public class MovieController {
     @Autowired
     private MovieService movieService;
 
-    // Listaa kaikki elokuvat
+   
     @GetMapping("/movies")
     public String listMovies(Model model) {
         model.addAttribute("movies", movieService.findAllMovies());
         return "movies"; 
     }
 
-    // Näyttää lomakkeen uuden elokuvan lisäämiseksi
     @GetMapping("/movies/add")
     public String showAddMovieForm(Model model) {
         model.addAttribute("movie", new Movie());
@@ -33,7 +32,6 @@ public class MovieController {
         return "redirect:/movies"; 
     }
 
-    // Näyttää lomakkeen elokuvan tietojen päivittämiseksi
     @GetMapping("/movies/edit/{id}")
     public String showUpdateForm(@PathVariable("id") Long id, Model model) {
         Movie movie = movieService.findMovieById(id)
@@ -42,7 +40,6 @@ public class MovieController {
         return "update-movie"; 
     }
 
-    // Käsittelee elokuvan tietojen päivittämisen
     @PostMapping("/movies/update/{id}")
     public String updateMovie(@PathVariable("id") Long id, @ModelAttribute Movie movie) {
         movie.setId(id);
@@ -50,7 +47,6 @@ public class MovieController {
         return "redirect:/movies"; 
     }
 
-    // Käsittelee elokuvan poistamisen
     @GetMapping("/movies/delete/{id}")
     public String deleteMovie(@PathVariable("id") Long id) {
         movieService.deleteMovie(id);
