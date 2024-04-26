@@ -30,7 +30,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         }
         
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        String[] roles = user.getRoles().split(","); // Assuming roles are separated by a comma
+        String[] roles = user.getRoles().split(","); 
         for (String role : roles) {
             authorities.add(new SimpleGrantedAuthority(role));
         }

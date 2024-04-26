@@ -40,15 +40,14 @@ public class MovieControllerTest {
         Movie movie = new Movie("Test Movie", 2021, "Test Genre", "Test Description");
         when(movieService.saveMovie(any(Movie.class))).thenReturn(movie);
 
-        mockMvc.perform(post("/movies") // Olettaen, että tämä on oikea reitti elokuvan lisäämiseen
+        mockMvc.perform(post("/movies") 
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .param("title", movie.getTitle())
                 .param("releaseYear", movie.getReleaseYear().toString())
                 .param("genre", movie.getGenre())
                 .param("description", movie.getDescription())
-                .with(SecurityMockMvcRequestPostProcessors.csrf())) // Lisää CSRF token tähän
+                .with(SecurityMockMvcRequestPostProcessors.csrf())) 
                 .andExpect(status().is3xxRedirection());
     }
 
-    // Lisää testejä tarpeen mukaan
 }

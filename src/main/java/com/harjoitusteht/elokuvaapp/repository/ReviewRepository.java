@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ReviewRepository extends JpaRepository<Review, Long> {
-    // Voit lisätä metodeja, jotka hakevat arvostelut tietylle elokuvalle tai käyttäjälle, esim.:
-    // List<Review> findByMovieId(Long movieId);
+    
 }

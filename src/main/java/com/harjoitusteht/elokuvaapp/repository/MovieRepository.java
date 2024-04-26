@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Long> {
-    // Voit lisätä mukautettuja kyselymetodeja tähän, esimerkiksi:
-    // List<Movie> findByGenre(String genre);
+    
 }

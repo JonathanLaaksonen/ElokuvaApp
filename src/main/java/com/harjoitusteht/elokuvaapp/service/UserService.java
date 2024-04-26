@@ -11,21 +11,21 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-    // Lisää tämä, jos konstruktori-injektointi ei ole vielä määritelty
+    
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, MovieRepository movieRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
     public User registerNewUserAccount(User user) {
-        // Tarkista, ettei samalla käyttäjänimellä ole jo luotu tiliä
+        
         if (userRepository.findByUsername(user.getUsername()) != null) {
             throw new IllegalArgumentException("Username already in use");
-            // Heitä poikkeus tai käsittele tilanne, jos käyttäjänimi on jo käytössä
+            
         }
-        // Hashaa salasana ennen tallennusta
+        
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRoles("ROLE_USER,ROLE_ADMIN"); // Aseta oletusrooli
+        user.setRoles("ROLE_USER,ROLE_ADMIN"); 
         return userRepository.save(user);
 }
 }

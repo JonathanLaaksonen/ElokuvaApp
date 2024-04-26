@@ -20,11 +20,11 @@ public class Review {
     @JoinColumn(name = "user_id")
     private User user;
 
-    // Oletuskonstruktori
+   
     public Review() {
     }
 
-    // Parametrillinen konstruktori
+   
     public Review(String text, Integer rating, Movie movie, User user) {
         this.text = text;
         this.rating = rating;
@@ -32,7 +32,7 @@ public class Review {
         this.user = user;
     }
 
-    // Getterit
+  
     public Long getId() {
         return id;
     }
@@ -53,7 +53,7 @@ public class Review {
         return user;
     }
 
-    // Setterit
+   
     public void setId(Long id) {
         this.id = id;
     }
@@ -74,7 +74,7 @@ public class Review {
         this.user = user;
     }
 
-    // toString-metodi (valinnainen, mutta hyödyllinen esim. loggauksessa)
+   
     @Override
     public String toString() {
         return "Review{" +

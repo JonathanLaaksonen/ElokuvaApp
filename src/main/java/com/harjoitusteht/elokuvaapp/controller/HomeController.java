@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    @GetMapping({"/home"})  // Käsittelee sekä juuripolun että /home-polun
+    @GetMapping({"/home"}) 
     public String home() {
         return "home";
     }

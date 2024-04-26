@@ -17,21 +17,20 @@ public class MovieController {
     @GetMapping("/movies")
     public String listMovies(Model model) {
         model.addAttribute("movies", movieService.findAllMovies());
-        return "movies"; // Thymeleaf-template tiedostonimi movies.html
+        return "movies"; 
     }
 
     // Näyttää lomakkeen uuden elokuvan lisäämiseksi
     @GetMapping("/movies/add")
     public String showAddMovieForm(Model model) {
         model.addAttribute("movie", new Movie());
-        return "add-movie"; // Thymeleaf-template tiedostonimi add-movie.html
+        return "add-movie"; 
     }
 
-    // Käsittelee uuden elokuvan lisäämisen
     @PostMapping("/movies")
     public String addMovie(@ModelAttribute Movie movie) {
         movieService.saveMovie(movie);
-        return "redirect:/movies"; // Ohjaa takaisin elokuvien listaukseen
+        return "redirect:/movies"; 
     }
 
     // Näyttää lomakkeen elokuvan tietojen päivittämiseksi
@@ -40,7 +39,7 @@ public class MovieController {
         Movie movie = movieService.findMovieById(id)
             .orElseThrow(() -> new IllegalArgumentException("Invalid movie Id:" + id));
         model.addAttribute("movie", movie);
-        return "update-movie"; // Thymeleaf-template tiedostonimi update-movie.html
+        return "update-movie"; 
     }
 
     // Käsittelee elokuvan tietojen päivittämisen
@@ -48,13 +47,13 @@ public class MovieController {
     public String updateMovie(@PathVariable("id") Long id, @ModelAttribute Movie movie) {
         movie.setId(id);
         movieService.saveMovie(movie);
-        return "redirect:/movies"; // Ohjaa takaisin elokuvien listaukseen
+        return "redirect:/movies"; 
     }
 
     // Käsittelee elokuvan poistamisen
     @GetMapping("/movies/delete/{id}")
     public String deleteMovie(@PathVariable("id") Long id) {
         movieService.deleteMovie(id);
-        return "redirect:/movies"; // Ohjaa takaisin elokuvien listaukseen
+        return "redirect:/movies"; 
     }
 }

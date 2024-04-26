@@ -18,11 +18,11 @@ public class Movie {
 
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Review> reviews = new HashSet<>();
-    // Oletuskonstruktori
+    
     public Movie() {
     }
 
-    // Parametrillinen konstruktori
+    
     public Movie(String title, Integer releaseYear, String genre, String description) {
         this.title = title;
         this.releaseYear = releaseYear;
@@ -30,7 +30,7 @@ public class Movie {
         this.description = description;
     }
 
-    // Getterit
+   
     public Long getId() {
         return id;
     }
@@ -51,7 +51,7 @@ public class Movie {
         return description;
     }
 
-    // Setterit
+   
     public void setId(Long id) {
         this.id = id;
     }
@@ -72,7 +72,7 @@ public class Movie {
         this.description = description;
     }
 
-    // toString-metodi (valinnainen, mutta hyödyllinen esim. loggauksessa)
+    
     @Override
     public String toString() {
         return "Movie{" +

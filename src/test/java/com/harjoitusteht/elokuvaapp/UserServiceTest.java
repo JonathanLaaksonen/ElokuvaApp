@@ -40,7 +40,6 @@ public class UserServiceTest {
         when(userRepository.findByUsername("testuser")).thenReturn(null);
         when(passwordEncoder.encode("password")).thenReturn("hashedPassword");
         
-        // ArgumentMatchers.any() on käytetty argumenttien sieppaamiseen tallennettaessa User-oliota.
         when(userRepository.save(any(User.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
         User registered = userService.registerNewUserAccount(user);
